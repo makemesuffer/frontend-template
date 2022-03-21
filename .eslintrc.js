@@ -11,6 +11,9 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:jsx-a11y/strict',
   ],
+  globals: {
+    React: 'readonly',
+  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -31,7 +34,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/*.test.tsx', '**/*.spec.tsx'],
+      files: ['**/*.test.{ts,tsx}', '**/*.spec.{ts,tsx}', '__tests__/**/*.{ts,tsx}'],
       env: {
         jest: true,
       },
